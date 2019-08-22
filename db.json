@@ -1,0 +1,12 @@
+{
+  "users": [
+    { "id": 1, "name": "Mark" },
+    { "id": 2, "name": "Tim" },
+    { "id": 3, "name": "Tom" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
+

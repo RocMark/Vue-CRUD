@@ -1,0 +1,15 @@
+%clearfix{
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.tl {
+  border: .5px solid #f50057;
+}
