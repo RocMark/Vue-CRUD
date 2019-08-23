@@ -13,6 +13,8 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+      // ! 查一下用法
+      // component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
     {
       path: '/create',
@@ -20,9 +22,13 @@ export default new Router({
       component: Create,
     },
     {
-      path: '/edit',
+      path: '/edit/:id',
       name: 'edit',
       component: Edit,
+      // 看一下 怎麼接參數
+      props: {
+        id: true,
+      },
     },
     {
       path: '/email',
@@ -30,12 +36,8 @@ export default new Router({
       component: Email,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      path: '*',
+      redirect: '/',
     }
   ],
 })

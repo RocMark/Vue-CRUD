@@ -18,13 +18,19 @@ module.exports = {
     // 'import/no-unresolved': 0,
     // 'import/extensions': 0,
     // 將錯誤改成警告，無傷大雅的樣式(save on fix)
-    'semi': ['error','never'],
+    'semi': 0,
     'max-len': 0,
+    'object-curly-newline': 0,
+    'no-unused-vars': 1,
     'no-trailing-spaces': 0,
     'space-before-blocks': 1,
     'no-multiple-empty-lines': 1,
+    'no-irregular-whitespace': 0,
     'no-trailing-spaces': 0,
+    'no-multi-spaces': 0,
+    'spaced-comment': 1,
     quotes: [ "error", "single" ],
+    "vue/no-unused-components": 1,
     "comma-dangle": [
       "warn",
       {

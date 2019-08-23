@@ -2,19 +2,28 @@
 
 ## 前言
 創建寫 side project 用的模板
-[測試網址(停用中)](https://rocmark.github.io/Vue-Template/.) 
 
 
 ## TODO
-- 做一下頁面的 blue template
 - route-link styling
 - blog post pagination
-- nav snippets 掛了查一下
+- 把 Props 使用手冊丟上去
 
 
-# 修正 Vue cli 專案
-- eslint rule 要改 eslint(import/extensions)
-- 做一個拔掉所有測試的乾淨檔案
+# 待查
+- 查一下 route.js components 的 function 是幹嘛的
+- ESLint v-bind:key
+- Route 待寫文章
+- Vuex store.js module 劃分檔
+
+# Snippets 修正
+- props default functions
+- bs4 bootstrap
+
+# 存取資料問題
+- 像是標籤資料，通常就只是單純存取，存取後應該存在哪? (localStorage?)
+
+
 
 
 ## 使用
