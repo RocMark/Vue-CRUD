@@ -19,6 +19,7 @@ module.exports = {
     // 'import/extensions': 0,
     // 將錯誤改成警告，無傷大雅的樣式(save on fix)
     'semi': 0,
+    'comma-spacing': 1,
     'max-len': 0,
     'object-curly-newline': 0,
     'no-unused-vars': 1,

@@ -4,12 +4,14 @@
     <h5>Title: {{ blog.title }}</h5>
     <h5>Tag: {{ blog.tag }}</h5>
     <p>Content: {{ blog.content }}</p>
-    <button @click="redirectToEdit()" class="btn btn-info mr-2">編輯</button>
-    <button @click="deletePost()" class="btn btn-danger">刪除</button>
+    <button @click="redirectToEdit(blog)" class="btn btn-info mr-2">編輯</button>
+    <button @click="deletePost(blog.id)" class="btn btn-danger">刪除</button>
   </li>
 </template>
 
 <script>
+import { mapActions, mapMutations } from 'vuex'
+
 export default {
   name: 'BlogPost',
 
@@ -27,20 +29,31 @@ export default {
   },
 
   methods: {
-    // 傳送該筆資料的 id
-    //!  查一下是否可以把資料全部傳過去 不用寫在路由上
-    redirectToEdit() {
+    ...mapMutations([
+      'currentEditBlog'
+    ]),
+    ...mapActions([
+      'deleteBlog'
+    ]),
+    //! 查一下是否可以把資料全部傳過去 不用寫在路由上
+    // ? 我用將要編輯的資料 先存在 Vuex 再去取
+    redirectToEdit(data) {
+      this.currentEditBlog(data)
+
       this.$router.push({
         name: 'edit',
-        params: { id: this.post.id, },
+        // ? 只能傳 route 定義的???
+        params: {
+          id: this.blog.id,
+          // blog: this.blog, // 沒吃到
+        },
       })
     },
-    deletePost() {
-      // 發送 刪除 API 渲染本頁即可
-
+    deletePost(id) {
+      this.deleteBlog(id)
+      //! go 會進行刷新頁面
+      this.$router.go('home')
     },
-
-
   },
 
 }
